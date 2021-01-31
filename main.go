@@ -18,10 +18,10 @@ func main(){
 
 	r,err:=c.Login()
 	if err!=nil{
-		log.Fatal(err)
+		log.Println(err)
 	}
 	if !r.Success{
-		log.Fatal(r.ErrorMessage)
+		log.Println(r.ErrorMessage)
 	}
 
 	go mirai.Reminder(c)

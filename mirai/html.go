@@ -35,7 +35,7 @@ func Html(url string)(body []byte){
 func GetTitle(body string)string{
 	dom,err:=goquery.NewDocumentFromReader(strings.NewReader(body))
 	if err!=nil{
-		log.Fatal(err)
+		log.Println(err)
 	}
 	content:=dom.Find("title").Last()
 	return strings.Split(content.Text(),"- HUSTPORT")[0]
@@ -44,7 +44,7 @@ func GetTitle(body string)string{
 func GetScript(body string)string{
 	dom,err:=goquery.NewDocumentFromReader(strings.NewReader(body))
 	if err!=nil{
-		log.Fatal(err)
+		log.Println(err)
 	}
 	content:=dom.Find("script").Last()
 	return content.Text()
